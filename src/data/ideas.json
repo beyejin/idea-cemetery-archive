@@ -14,7 +14,8 @@
     "resurrectedAs": null,
     "visibility": "private",
     "consentChecked": false,
-    "sourceRound": "1차"
+    "sourceRound": "1차",
+    "killedBy": null
   },
   {
     "id": "aqua-clash",
@@ -31,7 +32,8 @@
     "resurrectedAs": null,
     "visibility": "private",
     "consentChecked": false,
-    "sourceRound": "1차"
+    "sourceRound": "1차",
+    "killedBy": null
   },
   {
     "id": "abyss-crew",
@@ -48,7 +50,8 @@
     "resurrectedAs": null,
     "visibility": "private",
     "consentChecked": false,
-    "sourceRound": "1차"
+    "sourceRound": "1차",
+    "killedBy": null
   },
   {
     "id": "bid-kingdom",
@@ -65,7 +68,8 @@
     "resurrectedAs": null,
     "visibility": "private",
     "consentChecked": false,
-    "sourceRound": "1차"
+    "sourceRound": "1차",
+    "killedBy": null
   },
   {
     "id": "race-maker-poolside",
@@ -82,7 +86,8 @@
     "resurrectedAs": null,
     "visibility": "private",
     "consentChecked": false,
-    "sourceRound": "2차"
+    "sourceRound": "2차",
+    "killedBy": null
   },
   {
     "id": "bot-derby",
@@ -99,7 +104,8 @@
     "resurrectedAs": null,
     "visibility": "private",
     "consentChecked": false,
-    "sourceRound": "2차"
+    "sourceRound": "2차",
+    "killedBy": null
   },
   {
     "id": "rumor-market",
@@ -116,7 +122,8 @@
     "resurrectedAs": null,
     "visibility": "private",
     "consentChecked": false,
-    "sourceRound": "2차"
+    "sourceRound": "2차",
+    "killedBy": null
   },
   {
     "id": "promise-cemetery",
@@ -133,7 +140,8 @@
     "resurrectedAs": null,
     "visibility": "private",
     "consentChecked": false,
-    "sourceRound": "4차"
+    "sourceRound": "4차",
+    "killedBy": null
   },
   {
     "id": "leaver-black-box",
@@ -150,7 +158,8 @@
     "resurrectedAs": null,
     "visibility": "private",
     "consentChecked": false,
-    "sourceRound": "4차"
+    "sourceRound": "4차",
+    "killedBy": null
   },
   {
     "id": "meeting-misunderstanding-detector",
@@ -167,7 +176,8 @@
     "resurrectedAs": null,
     "visibility": "private",
     "consentChecked": false,
-    "sourceRound": "4차"
+    "sourceRound": "4차",
+    "killedBy": null
   },
   {
     "id": "anxiety-backlog",
@@ -184,7 +194,8 @@
     "resurrectedAs": null,
     "visibility": "private",
     "consentChecked": false,
-    "sourceRound": "4차"
+    "sourceRound": "4차",
+    "killedBy": null
   },
   {
     "id": "ai-accountability-trace",
@@ -201,7 +212,8 @@
     "resurrectedAs": null,
     "visibility": "private",
     "consentChecked": false,
-    "sourceRound": "4차"
+    "sourceRound": "4차",
+    "killedBy": null
   },
   {
     "id": "premortem-report",
@@ -218,7 +230,8 @@
     "resurrectedAs": null,
     "visibility": "private",
     "consentChecked": false,
-    "sourceRound": "4차"
+    "sourceRound": "4차",
+    "killedBy": null
   },
   {
     "id": "code-battle-royale",
@@ -236,7 +249,8 @@
     "resurrectedAs": null,
     "visibility": "private",
     "consentChecked": false,
-    "sourceRound": "6차"
+    "sourceRound": "6차",
+    "killedBy": null
   },
   {
     "id": "semantic-game-arena",
@@ -254,6 +268,43 @@
     "resurrectedAs": null,
     "visibility": "private",
     "consentChecked": false,
-    "sourceRound": "팀원 기획서"
+    "sourceRound": "팀원 기획서",
+    "killedBy": null
+  },
+  {
+    "id": "black-harbor",
+    "title": "검은 항구",
+    "oneLinePitch": "4명이 화물 2개에 동시에 봉인 입찰하고, 시장 거래·비밀 계약 배송·밀수와 세관 조사를 거쳐 가장 높은 점수를 겨루는 웹 전략 게임.",
+    "proposedAt": null,
+    "rejectedAt": null,
+    "causes": ["튜터 피드백"],
+    "verdict": "성원 튜터님의 피드백을 계기로 최종 프로젝트 후보에서 제외되었으며, 구체적인 판단 근거는 추가 확인이 필요합니다.",
+    "lessons": "이중 봉인 경매와 비밀 계약의 게임성뿐 아니라 여섯 단계와 8라운드를 팀 일정 안에 실제로 완주할 수 있는 구현 범위를 함께 검증해야 합니다.",
+    "artifacts": [
+      { "name": "검은 항구 5분 룰북", "type": "md", "available": false, "note": "대화 제공 원문 · 비공개" }
+    ],
+    "resurrectedAs": null,
+    "visibility": "summary",
+    "consentChecked": true,
+    "sourceRound": "최종 프로젝트 후보",
+    "killedBy": "성원 튜터님"
+  },
+  {
+    "id": "pack-match",
+    "title": "팩매치",
+    "oneLinePitch": "같은 생활권의 1인 가구가 필요한 상품과 수량을 등록하면 시스템이 수요를 자동으로 묶고, 성사된 수량만 결제해 고정 거점에서 수령하게 하는 무호스트 공동 장보기 플랫폼.",
+    "proposedAt": null,
+    "rejectedAt": null,
+    "causes": ["팀 선택"],
+    "verdict": "밤송이클럽의 팀 논의 결과 최종 프로젝트 후보에서 제외되었으며, 구체적인 탈락 사유는 추측하지 않고 추가 확인이 필요합니다.",
+    "lessons": "동시성 안전한 수요 매칭과 결제 정합성을 구현하기 전에 제한된 생활권의 수요 밀도와 픽업 운영 가능성을 먼저 검증해야 합니다.",
+    "artifacts": [
+      { "name": "팩매치 서비스 및 백엔드 기획서", "type": "md", "available": false, "note": "대화 첨부 원문 · 비공개" }
+    ],
+    "resurrectedAs": null,
+    "visibility": "summary",
+    "consentChecked": true,
+    "sourceRound": "최종 프로젝트 후보",
+    "killedBy": "밤송이클럽"
   }
 ]

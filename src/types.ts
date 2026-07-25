@@ -35,4 +35,5 @@ export interface Idea {
   visibility: "private" | "summary" | "public"
   consentChecked: boolean
   sourceRound: string
+  killedBy: string | null
 }
