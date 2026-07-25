@@ -6,4 +6,5 @@ private/
 .DS_Store
 .codex/
 .serena/
+.worktrees/
 *.local
