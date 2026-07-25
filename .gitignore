@@ -1,0 +1,9 @@
+node_modules/
+dist/
+coverage/
+private/
+/docs/superpowers/
+.DS_Store
+.codex/
+.serena/
+*.local
