@@ -29,7 +29,7 @@ git diff --check
 ```bash
 git status --short
 git add src/data/ideas.json  # 예시: 실제 수정한 파일만 적습니다
-git commit -m "docs: 변경 내용"
+git commit -m "feat: 아이디어 기록 추가"
 git push origin main
 ```
 
