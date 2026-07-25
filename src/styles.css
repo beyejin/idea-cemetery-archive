@@ -271,7 +271,7 @@ a {
   margin-top: clamp(44px, 7vw, 80px);
   padding: clamp(22px, 3vw, 34px);
   display: grid;
-  grid-template-columns: minmax(280px, 1fr) minmax(220px, 0.44fr);
+  grid-template-columns: minmax(280px, 1fr) repeat(2, minmax(170px, 0.36fr));
   align-items: end;
   gap: 32px;
   border: 1px solid var(--border);
@@ -280,7 +280,8 @@ a {
 }
 
 .search-field,
-.cause-filter {
+.cause-filter,
+.killer-filter {
   display: flex;
   flex-direction: column;
   gap: 11px;
@@ -548,6 +549,27 @@ a {
   text-wrap: pretty;
 }
 
+.killed-by {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+}
+
+.killed-by span {
+  color: var(--faint);
+  font-size: 0.65rem;
+  font-weight: 760;
+  letter-spacing: 0.12em;
+}
+
+.killed-by strong {
+  color: var(--accent-strong);
+  font-weight: 780;
+}
+
 .cause-list {
   margin-top: 18px;
   display: flex;
@@ -686,6 +708,31 @@ a {
   color: var(--muted);
   font-size: 1.05rem;
   line-height: 1.7;
+}
+
+.dialog-killed-by {
+  margin: 20px 0 0;
+}
+
+.dialog-killed-by > div {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.dialog-killed-by dt {
+  color: var(--faint);
+  font-size: 0.7rem;
+  font-weight: 760;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.dialog-killed-by dd {
+  margin: 0;
+  color: var(--accent-strong);
+  font-size: 0.9rem;
+  font-weight: 780;
 }
 
 .date-grid {

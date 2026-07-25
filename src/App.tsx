@@ -83,7 +83,10 @@ export function App() {
       <main id="archive" className="archive-main">
         <section className="archive-intro" aria-labelledby="archive-title">
           <h2 id="archive-title">남겨진 기록</h2>
-          <p>검색하거나 중단 원인을 골라, 그때의 판단과 다음 시도에 남길 교훈을 확인하세요.</p>
+          <p>
+            검색하거나 중단 원인과 판정자를 골라, 그때의 판단과 다음 시도에 남길 교훈을
+            확인하세요.
+          </p>
         </section>
 
         <section className="controls" aria-label="아이디어 찾기">
@@ -181,7 +184,7 @@ export function App() {
       </main>
 
       <footer className="site-footer">
-        <p>이 사이트에는 정규화한 요약만 포함하며 원문과 인물 정보는 공개하지 않습니다.</p>
+        <p>정규화한 요약과 공개 동의를 확인한 정보만 표시합니다.</p>
       </footer>
 
       {selectedIdea ? (

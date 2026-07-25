@@ -65,6 +65,15 @@ export function IdeaDetailDialog({ idea, onClose }: IdeaDetailDialogProps) {
 
         <p className="dialog-pitch">{idea.oneLinePitch}</p>
 
+        {idea.killedBy ? (
+          <dl className="dialog-killed-by">
+            <div>
+              <dt>Killed by</dt>
+              <dd>{idea.killedBy}</dd>
+            </div>
+          </dl>
+        ) : null}
+
         <dl className="date-grid">
           <div>
             <dt>제안일</dt>
@@ -104,7 +113,7 @@ export function IdeaDetailDialog({ idea, onClose }: IdeaDetailDialogProps) {
 
         <div className="dialog-privacy">
           <LockKey aria-hidden="true" />
-          공개 동의를 확인하기 전까지 원문 링크와 인물 정보는 표시하지 않습니다.
+          원문 링크와 인물 정보는 공개 동의를 확인한 경우에만 표시합니다.
         </div>
       </div>
     </dialog>

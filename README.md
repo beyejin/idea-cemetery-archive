@@ -20,4 +20,4 @@ npm run test:run
 npm run build
 ```
 
-수정 사항은 별도 브랜치에서 작업한 뒤 `main` 브랜치로 Pull Request를 보내주세요. Notion 원문, 개인 이름, 비공개 URL과 첨부파일은 저장소에 추가하지 않습니다.
+수정 사항은 별도 브랜치에서 작업한 뒤 `main` 브랜치로 Pull Request를 보내주세요. Notion 원문, 공개 동의를 확인하지 않은 개인 이름, 비공개 URL과 첨부파일은 저장소에 추가하지 않습니다.

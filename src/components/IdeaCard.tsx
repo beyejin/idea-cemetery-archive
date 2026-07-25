@@ -45,7 +45,13 @@ export function IdeaCard({ idea, index, onOpen }: IdeaCardProps) {
               {idea.title}
             </button>
           </h3>
-        <p>{idea.oneLinePitch}</p>
+          <p>{idea.oneLinePitch}</p>
+          {idea.killedBy ? (
+            <div className="killed-by">
+              <span>KILLED BY</span>
+              <strong>{idea.killedBy}</strong>
+            </div>
+          ) : null}
           <div className="cause-list" aria-label={`${idea.title} 중단 원인`}>
             {idea.causes.map((cause) => (
               <span key={cause}>{cause}</span>

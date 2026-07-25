@@ -12,6 +12,19 @@ describe("App", () => {
     expect(screen.queryByText("비공개 로컬 아카이브")).not.toBeInTheDocument()
   })
 
+  it("공개 동의를 확인한 정보만 표시한다고 알린다", async () => {
+    const user = userEvent.setup()
+    render(<App />)
+
+    expect(screen.getByText("정규화한 요약과 공개 동의를 확인한 정보만 표시합니다.")).toBeInTheDocument()
+
+    await user.click(screen.getByRole("button", { name: "검은 항구 기록 열기" }))
+    const dialog = screen.getByRole("dialog", { name: "검은 항구" })
+    expect(
+      within(dialog).getByText("원문 링크와 인물 정보는 공개 동의를 확인한 경우에만 표시합니다."),
+    ).toBeInTheDocument()
+  })
+
   it("검색어를 입력해도 검색창 이름을 유지한다", async () => {
     const user = userEvent.setup()
     render(<App />)
@@ -80,6 +93,28 @@ describe("App", () => {
     await user.click(screen.getByRole("button", { name: "검색과 필터 초기화" }))
     const resetList = screen.getByRole("list", { name: "아이디어 목록" })
     expect(within(resetList).getAllByRole("listitem")).toHaveLength(17)
+  })
+
+  it("판정자가 있는 카드에 KILLED BY 표식을 보여준다", () => {
+    render(<App />)
+
+    const openButton = screen.getByRole("button", { name: "검은 항구 기록 열기" })
+    const card = openButton.closest("article")
+
+    expect(card).not.toBeNull()
+    expect(within(card as HTMLElement).getByText("KILLED BY")).toBeInTheDocument()
+    expect(within(card as HTMLElement).getByText("성원 튜터님")).toBeInTheDocument()
+  })
+
+  it("상세 기록에서 승인된 판정자를 보여준다", async () => {
+    const user = userEvent.setup()
+    render(<App />)
+
+    await user.click(screen.getByRole("button", { name: "검은 항구 기록 열기" }))
+
+    const dialog = screen.getByRole("dialog", { name: "검은 항구" })
+    expect(within(dialog).getByText("Killed by")).toBeInTheDocument()
+    expect(within(dialog).getByText("성원 튜터님")).toBeInTheDocument()
   })
 
   it("카드에서 상세 기록을 열고 닫는다", async () => {
