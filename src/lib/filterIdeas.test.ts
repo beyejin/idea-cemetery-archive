@@ -18,6 +18,7 @@ const fixtures: Idea[] = [
     visibility: "private",
     consentChecked: false,
     sourceRound: "1차",
+    killedBy: "성원 튜터님",
   },
   {
     id: "abyss-crew",
@@ -33,6 +34,7 @@ const fixtures: Idea[] = [
     visibility: "private",
     consentChecked: false,
     sourceRound: "1차",
+    killedBy: "밤송이클럽",
   },
 ]
 
@@ -43,6 +45,10 @@ describe("filterIdeas", () => {
 
   it("선택한 원인 중 하나라도 포함한 아이디어만 남긴다", () => {
     expect(filterIdeas(fixtures, "", ["범위 과다"])).toEqual([fixtures[1]])
+  })
+
+  it("선택한 판정자의 아이디어만 남긴다", () => {
+    expect(filterIdeas(fixtures, "", [], "밤송이클럽")).toEqual([fixtures[1]])
   })
 
   it("검색 결과가 없으면 빈 배열을 반환한다", () => {

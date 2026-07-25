@@ -43,7 +43,7 @@ describe("App", () => {
 
     const list = screen.getByRole("list", { name: "아이디어 목록" })
 
-    expect(within(list).getAllByRole("listitem")).toHaveLength(15)
+    expect(within(list).getAllByRole("listitem")).toHaveLength(17)
     expect(list).toHaveClass("idea-list")
     expect(document.querySelector(".idea-grid")).not.toBeInTheDocument()
   })
@@ -61,6 +61,25 @@ describe("App", () => {
     expect(within(list).getAllByRole("listitem")).toHaveLength(3)
     expect(screen.getByText("Abyss Crew")).toBeInTheDocument()
     expect(screen.queryByText("Bid Kingdom")).not.toBeInTheDocument()
+  })
+
+  it("판정자를 선택해 해당 기록만 보여주고 초기화한다", async () => {
+    const user = userEvent.setup()
+    render(<App />)
+
+    await user.selectOptions(
+      screen.getByRole("combobox", { name: "Killed by" }),
+      "밤송이클럽",
+    )
+
+    const filteredList = screen.getByRole("list", { name: "아이디어 목록" })
+    expect(within(filteredList).getAllByRole("listitem")).toHaveLength(1)
+    expect(screen.getByText("팩매치")).toBeInTheDocument()
+    expect(screen.queryByText("검은 항구")).not.toBeInTheDocument()
+
+    await user.click(screen.getByRole("button", { name: "검색과 필터 초기화" }))
+    const resetList = screen.getByRole("list", { name: "아이디어 목록" })
+    expect(within(resetList).getAllByRole("listitem")).toHaveLength(17)
   })
 
   it("카드에서 상세 기록을 열고 닫는다", async () => {
@@ -88,6 +107,6 @@ describe("App", () => {
     expect(screen.getByText("아직 묻힌 기록이 없습니다")).toBeInTheDocument()
     await user.click(screen.getByRole("button", { name: "검색과 필터 초기화" }))
     const list = screen.getByRole("list", { name: "아이디어 목록" })
-    expect(within(list).getAllByRole("listitem")).toHaveLength(15)
+    expect(within(list).getAllByRole("listitem")).toHaveLength(17)
   })
 })

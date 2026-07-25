@@ -3,22 +3,30 @@ import { useMemo, useState } from "react"
 
 import { IdeaCard } from "./components/IdeaCard"
 import { IdeaDetailDialog } from "./components/IdeaDetailDialog"
-import { allCauses, ideas } from "./data/ideas"
+import { allCauses, allKillers, ideas } from "./data/ideas"
 import { filterIdeas } from "./lib/filterIdeas"
 import type { Cause, Idea } from "./types"
 
 export function App() {
   const [query, setQuery] = useState("")
   const [selectedCause, setSelectedCause] = useState<Cause | null>(null)
+  const [selectedKiller, setSelectedKiller] = useState<string | null>(null)
   const [selectedIdea, setSelectedIdea] = useState<Idea | null>(null)
   const filteredIdeas = useMemo(
-    () => filterIdeas(ideas, query, selectedCause ? [selectedCause] : []),
-    [query, selectedCause],
+    () =>
+      filterIdeas(
+        ideas,
+        query,
+        selectedCause ? [selectedCause] : [],
+        selectedKiller,
+      ),
+    [query, selectedCause, selectedKiller],
   )
 
   const resetFilters = () => {
     setQuery("")
     setSelectedCause(null)
+    setSelectedKiller(null)
   }
 
   return (
@@ -121,13 +129,33 @@ export function App() {
               </select>
             </span>
           </div>
+
+          <div className="killer-filter">
+            <label className="filter-label" htmlFor="killer-select">
+              Killed by
+            </label>
+            <span className="select-wrap">
+              <select
+                id="killer-select"
+                value={selectedKiller ?? ""}
+                onChange={(event) => setSelectedKiller(event.currentTarget.value || null)}
+              >
+                <option value="">전체 판정자</option>
+                {allKillers.map((killer) => (
+                  <option key={killer} value={killer}>
+                    {killer}
+                  </option>
+                ))}
+              </select>
+            </span>
+          </div>
         </section>
 
         <div className="result-summary" aria-live="polite">
           <p>
             <strong>{filteredIdeas.length}</strong>개의 기록
           </p>
-          {filteredIdeas.length > 0 && (query || selectedCause) ? (
+          {filteredIdeas.length > 0 && (query || selectedCause || selectedKiller) ? (
             <button className="text-button" type="button" onClick={resetFilters}>
               검색과 필터 초기화
             </button>
