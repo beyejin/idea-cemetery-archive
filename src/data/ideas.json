@@ -5,15 +5,20 @@
     "oneLinePitch": "동맹, 밀약, 배신, 비밀 목표가 공존하는 실시간 영토 전략 보드게임.",
     "proposedAt": null,
     "rejectedAt": null,
-    "causes": ["확인 필요"],
+    "causes": [
+      "확인 필요"
+    ],
     "verdict": "기술적 강점과 데모 장면은 정리되어 있지만, 중단 판단은 원문에 남아 있지 않습니다.",
     "lessons": "정치와 배신의 재미를 보드 위 행동으로 증명하는 규칙이 핵심입니다.",
     "artifacts": [
-      { "name": "Notion 원문", "type": "notion", "available": false, "note": "비공개 원문" }
+      {
+        "name": "Notion 원문",
+        "type": "notion",
+        "note": "Notion 페이지 공개본",
+        "url": "/documents/notion-ideas.md"
+      }
     ],
     "resurrectedAs": null,
-    "visibility": "private",
-    "consentChecked": false,
     "sourceRound": "1차",
     "killedBy": null
   },
@@ -23,15 +28,21 @@
     "oneLinePitch": "수영장 레인과 선수의 체력, 스킬, 타이밍을 관리하는 실시간 팀 전략 게임.",
     "proposedAt": null,
     "rejectedAt": null,
-    "causes": ["프론트엔드 부담", "확인 필요"],
+    "causes": [
+      "프론트엔드 부담",
+      "확인 필요"
+    ],
     "verdict": "수영 지식이라는 개성은 강했지만, 규칙을 쉽게 보이고 시각적으로 재미있게 만드는 과제가 있었습니다.",
     "lessons": "전문 지식은 개성이 되지만 처음 보는 사람도 즉시 이해할 수 있어야 합니다.",
     "artifacts": [
-      { "name": "Notion 원문", "type": "notion", "available": false, "note": "비공개 원문" }
+      {
+        "name": "Notion 원문",
+        "type": "notion",
+        "note": "Notion 페이지 공개본",
+        "url": "/documents/notion-ideas.md"
+      }
     ],
     "resurrectedAs": null,
-    "visibility": "private",
-    "consentChecked": false,
     "sourceRound": "1차",
     "killedBy": null
   },
@@ -41,15 +52,21 @@
     "oneLinePitch": "심해 기지에서 생존 장치를 고치며 배신자를 찾는 실시간 협동 게임.",
     "proposedAt": null,
     "rejectedAt": null,
-    "causes": ["프론트엔드 부담", "일정 부족"],
+    "causes": [
+      "프론트엔드 부담",
+      "일정 부족"
+    ],
     "verdict": "데모는 강하지만 방 이동, 미니맵, 상태 UI, 회의 화면까지 필요한 범위가 일정에 비해 컸습니다.",
     "lessons": "발표 임팩트가 큰 만큼 필요한 화면 수와 상태 동기화 비용도 함께 계산해야 합니다.",
     "artifacts": [
-      { "name": "Notion 원문", "type": "notion", "available": false, "note": "비공개 원문" }
+      {
+        "name": "Notion 원문",
+        "type": "notion",
+        "note": "Notion 페이지 공개본",
+        "url": "/documents/notion-ideas.md"
+      }
     ],
     "resurrectedAs": null,
-    "visibility": "private",
-    "consentChecked": false,
     "sourceRound": "1차",
     "killedBy": null
   },
@@ -59,15 +76,20 @@
     "oneLinePitch": "60초 동안 자원과 영토에 동시에 입찰하고 결과를 한 번에 공개하는 심리 전략 게임.",
     "proposedAt": null,
     "rejectedAt": null,
-    "causes": ["확인 필요"],
+    "causes": [
+      "확인 필요"
+    ],
     "verdict": "동시성 규칙과 구현 안정성은 좋았지만, 중단 판단은 원문에 기록되지 않았습니다.",
     "lessons": "화려한 전투 없이도 제한 시간과 동시 공개만으로 심리전을 만들 수 있습니다.",
     "artifacts": [
-      { "name": "Notion 원문", "type": "notion", "available": false, "note": "비공개 원문" }
+      {
+        "name": "Notion 원문",
+        "type": "notion",
+        "note": "Notion 페이지 공개본",
+        "url": "/documents/notion-ideas.md"
+      }
     ],
     "resurrectedAs": null,
-    "visibility": "private",
-    "consentChecked": false,
     "sourceRound": "1차",
     "killedBy": null
   },
@@ -77,15 +99,20 @@
     "oneLinePitch": "AI 수영선수의 경기 결과를 예측하고 제한된 개입 카드로 흐름을 바꾸는 게임.",
     "proposedAt": null,
     "rejectedAt": null,
-    "causes": ["확인 필요"],
+    "causes": [
+      "확인 필요"
+    ],
     "verdict": "자동 경주, 숨은 능력치, 제한 개입의 구조는 정리됐지만 중단 판단은 확인되지 않았습니다.",
     "lessons": "직접 조작하지 않아도 예측과 정보 비대칭으로 관전의 재미를 만들 수 있습니다.",
     "artifacts": [
-      { "name": "Notion 원문", "type": "notion", "available": false, "note": "비공개 원문" }
+      {
+        "name": "Notion 원문",
+        "type": "notion",
+        "note": "Notion 페이지 공개본",
+        "url": "/documents/notion-ideas.md"
+      }
     ],
     "resurrectedAs": null,
-    "visibility": "private",
-    "consentChecked": false,
     "sourceRound": "2차",
     "killedBy": null
   },
@@ -95,15 +122,21 @@
     "oneLinePitch": "플레이어가 AI 봇의 성향을 훈련시키고 자동 대결의 결과로 겨루는 게임.",
     "proposedAt": null,
     "rejectedAt": null,
-    "causes": ["프론트엔드 부담", "확인 필요"],
+    "causes": [
+      "프론트엔드 부담",
+      "확인 필요"
+    ],
     "verdict": "AI가 게임 구조의 중심이라는 장점이 있었지만, 자동 경기를 어떻게 재미있게 보여줄지가 과제였습니다.",
     "lessons": "AI 사용 자체보다 사용자가 결과를 보고 다시 튜닝하고 싶게 만드는 피드백이 중요합니다.",
     "artifacts": [
-      { "name": "Notion 원문", "type": "notion", "available": false, "note": "비공개 원문" }
+      {
+        "name": "Notion 원문",
+        "type": "notion",
+        "note": "Notion 페이지 공개본",
+        "url": "/documents/notion-ideas.md"
+      }
     ],
     "resurrectedAs": null,
-    "visibility": "private",
-    "consentChecked": false,
     "sourceRound": "2차",
     "killedBy": null
   },
@@ -113,15 +146,21 @@
     "oneLinePitch": "도시에 소문을 퍼뜨려 NPC의 행동과 인기 흐름을 바꾸는 간접 전략 게임.",
     "proposedAt": null,
     "rejectedAt": null,
-    "causes": ["범위 과다", "확인 필요"],
+    "causes": [
+      "범위 과다",
+      "확인 필요"
+    ],
     "verdict": "발표에서 기억에 남을 구조지만 NPC 반응을 정교하게 만들수록 구현 범위가 커지는 문제가 있었습니다.",
     "lessons": "도시를 작은 노드 그래프로 제한하면 예측 불가능성은 남기고 범위는 줄일 수 있습니다.",
     "artifacts": [
-      { "name": "Notion 원문", "type": "notion", "available": false, "note": "비공개 원문" }
+      {
+        "name": "Notion 원문",
+        "type": "notion",
+        "note": "Notion 페이지 공개본",
+        "url": "/documents/notion-ideas.md"
+      }
     ],
     "resurrectedAs": null,
-    "visibility": "private",
-    "consentChecked": false,
     "sourceRound": "2차",
     "killedBy": null
   },
@@ -131,15 +170,20 @@
     "oneLinePitch": "회의, Slack, Notion, 이메일 속에서 만들어졌다가 잊힌 약속을 찾는 서비스.",
     "proposedAt": null,
     "rejectedAt": null,
-    "causes": ["확인 필요"],
+    "causes": [
+      "확인 필요"
+    ],
     "verdict": "조직의 기억상실을 줄이는 문제 정의는 선명하지만, 중단 판단은 원문에 없습니다.",
     "lessons": "회의 요약보다 사라진 약속과 후속 행동을 연결하는 것이 차별점입니다.",
     "artifacts": [
-      { "name": "Notion 원문", "type": "notion", "available": false, "note": "비공개 원문" }
+      {
+        "name": "Notion 원문",
+        "type": "notion",
+        "note": "Notion 페이지 공개본",
+        "url": "/documents/notion-ideas.md"
+      }
     ],
     "resurrectedAs": null,
-    "visibility": "private",
-    "consentChecked": false,
     "sourceRound": "4차",
     "killedBy": null
   },
@@ -149,15 +193,20 @@
     "oneLinePitch": "퇴사 전에 한 사람에게만 남아 있는 업무, 문서, 코드, 고객 맥락을 찾는 서비스.",
     "proposedAt": null,
     "rejectedAt": null,
-    "causes": ["확인 필요"],
+    "causes": [
+      "확인 필요"
+    ],
     "verdict": "인수인계 리스크를 뒤집어 보는 관점은 선명하지만, 중단 판단은 원문에 없습니다.",
     "lessons": "문서를 쓰게 하는 것보다 사라질 지식이 무엇인지 먼저 찾는 질문이 중요합니다.",
     "artifacts": [
-      { "name": "Notion 원문", "type": "notion", "available": false, "note": "비공개 원문" }
+      {
+        "name": "Notion 원문",
+        "type": "notion",
+        "note": "Notion 페이지 공개본",
+        "url": "/documents/notion-ideas.md"
+      }
     ],
     "resurrectedAs": null,
-    "visibility": "private",
-    "consentChecked": false,
     "sourceRound": "4차",
     "killedBy": null
   },
@@ -167,15 +216,20 @@
     "oneLinePitch": "회의 뒤 각자 이해한 내용을 비교해 합의가 어긋난 부분을 찾는 서비스.",
     "proposedAt": null,
     "rejectedAt": null,
-    "causes": ["확인 필요"],
+    "causes": [
+      "확인 필요"
+    ],
     "verdict": "회의록 요약과 다른 문제를 잡았지만, 중단 판단은 원문에 기록되지 않았습니다.",
     "lessons": "결정이 없는 것만큼 결정했다고 착각하는 상태도 프로젝트를 위험하게 만듭니다.",
     "artifacts": [
-      { "name": "Notion 원문", "type": "notion", "available": false, "note": "비공개 원문" }
+      {
+        "name": "Notion 원문",
+        "type": "notion",
+        "note": "Notion 페이지 공개본",
+        "url": "/documents/notion-ideas.md"
+      }
     ],
     "resurrectedAs": null,
-    "visibility": "private",
-    "consentChecked": false,
     "sourceRound": "4차",
     "killedBy": null
   },
@@ -185,15 +239,20 @@
     "oneLinePitch": "팀원이 말하지 못한 불안과 찜찜함을 익명으로 모아 리스크로 정리하는 서비스.",
     "proposedAt": null,
     "rejectedAt": null,
-    "causes": ["확인 필요"],
+    "causes": [
+      "확인 필요"
+    ],
     "verdict": "확정된 이슈 이전의 약한 신호를 다루지만, 중단 판단은 원문에 없습니다.",
     "lessons": "티켓이 되기 전의 애매한 걱정도 팀 리스크 데이터가 될 수 있습니다.",
     "artifacts": [
-      { "name": "Notion 원문", "type": "notion", "available": false, "note": "비공개 원문" }
+      {
+        "name": "Notion 원문",
+        "type": "notion",
+        "note": "Notion 페이지 공개본",
+        "url": "/documents/notion-ideas.md"
+      }
     ],
     "resurrectedAs": null,
-    "visibility": "private",
-    "consentChecked": false,
     "sourceRound": "4차",
     "killedBy": null
   },
@@ -203,15 +262,20 @@
     "oneLinePitch": "AI가 만든 문서, 답변, 코드를 사람이 어디까지 수정했고 누가 승인했는지 남기는 서비스.",
     "proposedAt": null,
     "rejectedAt": null,
-    "causes": ["확인 필요"],
+    "causes": [
+      "확인 필요"
+    ],
     "verdict": "AI 결과물의 책임과 승인 문제를 잡았지만, 중단 판단은 원문에 없습니다.",
     "lessons": "AI 사용 여부보다 생성, 수정, 근거, 승인 이력을 연결하는 것이 더 중요한 문제입니다.",
     "artifacts": [
-      { "name": "Notion 원문", "type": "notion", "available": false, "note": "비공개 원문" }
+      {
+        "name": "Notion 원문",
+        "type": "notion",
+        "note": "Notion 페이지 공개본",
+        "url": "/documents/notion-ideas.md"
+      }
     ],
     "resurrectedAs": null,
-    "visibility": "private",
-    "consentChecked": false,
     "sourceRound": "4차",
     "killedBy": null
   },
@@ -221,15 +285,20 @@
     "oneLinePitch": "프로젝트가 끝난 뒤가 아니라 시작 전에 실패 원인을 미리 쓰는 프리모템 서비스.",
     "proposedAt": null,
     "rejectedAt": null,
-    "causes": ["확인 필요"],
+    "causes": [
+      "확인 필요"
+    ],
     "verdict": "프로젝트 관리 도구와 다른 미래 관점은 분명하지만, 중단 판단은 원문에 없습니다.",
     "lessons": "진행률보다 일정, 역할, 기술 목표가 충돌하는 미래 시나리오가 더 유용할 수 있습니다.",
     "artifacts": [
-      { "name": "Notion 원문", "type": "notion", "available": false, "note": "비공개 원문" }
+      {
+        "name": "Notion 원문",
+        "type": "notion",
+        "note": "Notion 페이지 공개본",
+        "url": "/documents/notion-ideas.md"
+      }
     ],
     "resurrectedAs": null,
-    "visibility": "private",
-    "consentChecked": false,
     "sourceRound": "4차",
     "killedBy": null
   },
@@ -239,16 +308,25 @@
     "oneLinePitch": "참가자가 작성한 봇 코드를 격리 실행해 실시간 아레나에서 대결시키는 교육 플랫폼.",
     "proposedAt": "2026-07-08",
     "rejectedAt": null,
-    "causes": ["확인 필요"],
+    "causes": [
+      "확인 필요"
+    ],
     "verdict": "샌드박스 실행과 매치 오케스트레이션의 기술 서사는 강하지만, 최종 중단 사유는 확인되지 않았습니다.",
     "lessons": "코드 채점보다 코드가 싸우는 장면이 데모와 리플레이의 중심이 됩니다.",
     "artifacts": [
-      { "name": "코드배틀로얄_기획서.pdf", "type": "pdf", "available": false, "note": "원본 미수집" },
-      { "name": "Notion 원문", "type": "notion", "available": false, "note": "비공개 원문" }
+      {
+        "name": "코드배틀로얄_기획서.pdf",
+        "type": "pdf",
+        "note": "원본 미수집"
+      },
+      {
+        "name": "Notion 원문",
+        "type": "notion",
+        "note": "Notion 페이지 공개본",
+        "url": "/documents/notion-ideas.md"
+      }
     ],
     "resurrectedAs": null,
-    "visibility": "private",
-    "consentChecked": false,
     "sourceRound": "6차",
     "killedBy": null
   },
@@ -258,16 +336,25 @@
     "oneLinePitch": "단어 임베딩의 의미 거리와 벡터 연산을 여러 파티 게임 규칙으로 바꾸는 플랫폼.",
     "proposedAt": null,
     "rejectedAt": null,
-    "causes": ["확인 필요"],
+    "causes": [
+      "확인 필요"
+    ],
     "verdict": "Notion에는 기획서 첨부와 임베딩 게임 메모가 있으며, 최종 중단 판단은 원본 검토가 필요합니다.",
     "lessons": "같은 임베딩 기반도 사영, 벡터 산술, 신규성 검사처럼 서로 다른 게임 경험으로 나눌 수 있습니다.",
     "artifacts": [
-      { "name": "시맨틱_게임_아레나_기획서.pdf", "type": "pdf", "available": false, "note": "원본 미수집" },
-      { "name": "Notion 원문", "type": "notion", "available": false, "note": "비공개 원문" }
+      {
+        "name": "시맨틱_게임_아레나_기획서.pdf",
+        "type": "pdf",
+        "note": "원본 미수집"
+      },
+      {
+        "name": "Notion 원문",
+        "type": "notion",
+        "note": "Notion 페이지 공개본",
+        "url": "/documents/notion-ideas.md"
+      }
     ],
     "resurrectedAs": null,
-    "visibility": "private",
-    "consentChecked": false,
     "sourceRound": "팀원 기획서",
     "killedBy": null
   },
@@ -277,15 +364,20 @@
     "oneLinePitch": "4명이 화물 2개에 동시에 봉인 입찰하고, 시장 거래·비밀 계약 배송·밀수와 세관 조사를 거쳐 가장 높은 점수를 겨루는 웹 전략 게임.",
     "proposedAt": null,
     "rejectedAt": null,
-    "causes": ["튜터 피드백"],
+    "causes": [
+      "튜터 피드백"
+    ],
     "verdict": "성원 튜터님의 피드백을 계기로 최종 프로젝트 후보에서 제외되었으며, 구체적인 판단 근거는 추가 확인이 필요합니다.",
     "lessons": "이중 봉인 경매와 비밀 계약의 게임성뿐 아니라 여섯 단계와 8라운드를 팀 일정 안에 실제로 완주할 수 있는 구현 범위를 함께 검증해야 합니다.",
     "artifacts": [
-      { "name": "검은 항구 5분 룰북", "type": "md", "available": false, "note": "대화 제공 원문 · 비공개" }
+      {
+        "name": "검은 항구 5분 룰북",
+        "type": "md",
+        "note": "대화 제공 원문",
+        "url": "/documents/black-harbor-rulebook.md"
+      }
     ],
     "resurrectedAs": null,
-    "visibility": "summary",
-    "consentChecked": true,
     "sourceRound": "최종 프로젝트 후보",
     "killedBy": "성원 튜터님"
   },
@@ -295,15 +387,19 @@
     "oneLinePitch": "같은 생활권의 1인 가구가 필요한 상품과 수량을 등록하면 시스템이 수요를 자동으로 묶고, 성사된 수량만 결제해 고정 거점에서 수령하게 하는 무호스트 공동 장보기 플랫폼.",
     "proposedAt": null,
     "rejectedAt": null,
-    "causes": ["팀 선택"],
+    "causes": [
+      "팀 선택"
+    ],
     "verdict": "밤송이클럽의 팀 논의 결과 최종 프로젝트 후보에서 제외되었으며, 구체적인 탈락 사유는 추측하지 않고 추가 확인이 필요합니다.",
     "lessons": "동시성 안전한 수요 매칭과 결제 정합성을 구현하기 전에 제한된 생활권의 수요 밀도와 픽업 운영 가능성을 먼저 검증해야 합니다.",
     "artifacts": [
-      { "name": "팩매치 서비스 및 백엔드 기획서", "type": "md", "available": false, "note": "대화 첨부 원문 · 비공개" }
+      {
+        "name": "팩매치 서비스 및 백엔드 기획서",
+        "type": "md",
+        "note": "대화 첨부 원문 · 원본 미수집"
+      }
     ],
     "resurrectedAs": null,
-    "visibility": "summary",
-    "consentChecked": true,
     "sourceRound": "최종 프로젝트 후보",
     "killedBy": "밤송이클럽"
   }

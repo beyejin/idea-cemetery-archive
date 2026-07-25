@@ -5,24 +5,21 @@ import { describe, expect, it } from "vitest"
 import { App } from "./App"
 
 describe("App", () => {
-  it("원문을 제외한 공개 아카이브임을 알린다", () => {
-    render(<App />)
-
-    expect(screen.getByText("원문 제외 아카이브")).toBeInTheDocument()
-    expect(screen.queryByText("비공개 로컬 아카이브")).not.toBeInTheDocument()
-  })
-
-  it("공개 동의를 확인한 정보만 표시한다고 알린다", async () => {
+  it("전체 공개 아카이브와 실제 자료 링크를 보여준다", async () => {
     const user = userEvent.setup()
     render(<App />)
 
-    expect(screen.getByText("정규화한 요약과 공개 동의를 확인한 정보만 표시합니다.")).toBeInTheDocument()
+    expect(screen.getByText("전체 공개 아카이브")).toBeInTheDocument()
+    expect(
+      screen.getByText("아이디어와 제공받은 원문을 공개 아카이브로 보존합니다."),
+    ).toBeInTheDocument()
 
     await user.click(screen.getByRole("button", { name: "검은 항구 기록 열기" }))
     const dialog = screen.getByRole("dialog", { name: "검은 항구" })
     expect(
-      within(dialog).getByText("원문 링크와 인물 정보는 공개 동의를 확인한 경우에만 표시합니다."),
-    ).toBeInTheDocument()
+      within(dialog).getByRole("link", { name: /검은 항구 5분 룰북/ }),
+    ).toHaveAttribute("href", expect.stringContaining("documents/black-harbor-rulebook.md"))
+    expect(within(dialog).queryByText(/공개 동의/)).not.toBeInTheDocument()
   })
 
   it("검색어를 입력해도 검색창 이름을 유지한다", async () => {

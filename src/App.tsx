@@ -1,4 +1,4 @@
-import { Archive, LockKey, MagnifyingGlass, X } from "@phosphor-icons/react"
+import { Archive, Globe, MagnifyingGlass, X } from "@phosphor-icons/react"
 import { useMemo, useState } from "react"
 
 import { IdeaCard } from "./components/IdeaCard"
@@ -12,6 +12,9 @@ export function App() {
   const [selectedCause, setSelectedCause] = useState<Cause | null>(null)
   const [selectedKiller, setSelectedKiller] = useState<string | null>(null)
   const [selectedIdea, setSelectedIdea] = useState<Idea | null>(null)
+  const publicArtifactCount = ideas
+    .flatMap(({ artifacts }) => artifacts)
+    .filter(({ url }) => Boolean(url)).length
   const filteredIdeas = useMemo(
     () =>
       filterIdeas(
@@ -37,9 +40,9 @@ export function App() {
             <Archive weight="duotone" aria-hidden="true" />
             <span>아이디어 공동묘지</span>
           </a>
-          <span className="privacy-note">
-            <LockKey weight="bold" aria-hidden="true" />
-            원문 제외 아카이브
+          <span className="archive-note">
+            <Globe weight="bold" aria-hidden="true" />
+            전체 공개 아카이브
           </span>
         </nav>
 
@@ -74,8 +77,8 @@ export function App() {
             <span>Notion 원문 섹션</span>
           </div>
           <div>
-            <strong>0</strong>
-            <span>번들에 포함한 원본</span>
+            <strong>{publicArtifactCount}</strong>
+            <span>공개 자료 링크</span>
           </div>
         </section>
       </header>
@@ -184,7 +187,7 @@ export function App() {
       </main>
 
       <footer className="site-footer">
-        <p>정규화한 요약과 공개 동의를 확인한 정보만 표시합니다.</p>
+        <p>아이디어와 제공받은 원문을 공개 아카이브로 보존합니다.</p>
       </footer>
 
       {selectedIdea ? (

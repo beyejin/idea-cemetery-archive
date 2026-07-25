@@ -1,4 +1,4 @@
-import { FileText, LockKey, X } from "@phosphor-icons/react"
+import { ArrowUpRight, FileText, X } from "@phosphor-icons/react"
 import { useEffect, useRef } from "react"
 
 import type { Idea } from "../types"
@@ -100,21 +100,33 @@ export function IdeaDetailDialog({ idea, onClose }: IdeaDetailDialogProps) {
           <ul className="artifact-list">
             {idea.artifacts.map((artifact) => (
               <li key={`${artifact.type}-${artifact.name}`}>
-                <FileText aria-hidden="true" />
-                <span>
-                  <strong>{artifact.name}</strong>
-                  <small>{artifact.note ?? "비공개 보관"}</small>
-                </span>
-                <LockKey aria-label="사이트 번들에 포함되지 않음" />
+                {artifact.url ? (
+                  <a
+                    href={`${import.meta.env.BASE_URL}${artifact.url.replace(/^\//, "")}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`${artifact.name} 새 탭에서 열기`}
+                  >
+                    <FileText aria-hidden="true" />
+                    <span>
+                      <strong>{artifact.name}</strong>
+                      <small>{artifact.note ?? "공개 원문"}</small>
+                    </span>
+                    <ArrowUpRight aria-hidden="true" />
+                  </a>
+                ) : (
+                  <div>
+                    <FileText aria-hidden="true" />
+                    <span>
+                      <strong>{artifact.name}</strong>
+                      <small>{artifact.note ?? "원본 미수집"}</small>
+                    </span>
+                  </div>
+                )}
               </li>
             ))}
           </ul>
         </section>
-
-        <div className="dialog-privacy">
-          <LockKey aria-hidden="true" />
-          원문 링크와 인물 정보는 공개 동의를 확인한 경우에만 표시합니다.
-        </div>
       </div>
     </dialog>
   )

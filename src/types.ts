@@ -17,7 +17,7 @@ export type Cause = (typeof CAUSES)[number]
 export interface Artifact {
   name: string
   type: "pdf" | "md" | "zip" | "notion"
-  available: boolean
+  url?: string
   note?: string
 }
 
@@ -32,8 +32,6 @@ export interface Idea {
   lessons: string
   artifacts: Artifact[]
   resurrectedAs: string | null
-  visibility: "private" | "summary" | "public"
-  consentChecked: boolean
   sourceRound: string
   killedBy: string | null
 }

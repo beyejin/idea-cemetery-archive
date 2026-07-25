@@ -22,45 +22,43 @@ describe("ideas data contract", () => {
     expect(exports.allKillers).toEqual(["성원 튜터님", "밤송이클럽"])
   })
 
-  it("승인된 두 기록만 판정자와 공개 동의 상태를 가진다", () => {
+  it("실명이 확인된 두 기록에 판정자를 표시한다", () => {
     const records = JSON.parse(JSON.stringify(ideas)) as Array<{
       id: string
       killedBy?: string | null
-      visibility: string
-      consentChecked: boolean
     }>
-    const approvedRecords = records.filter(({ killedBy }) => Boolean(killedBy))
+    const judgedRecords = records.filter(({ killedBy }) => Boolean(killedBy))
 
-    expect(approvedRecords.map(({ id, killedBy }) => ({ id, killedBy }))).toEqual([
+    expect(judgedRecords.map(({ id, killedBy }) => ({ id, killedBy }))).toEqual([
       { id: "black-harbor", killedBy: "성원 튜터님" },
       { id: "pack-match", killedBy: "밤송이클럽" },
     ])
-    expect(
-      approvedRecords.every(
-        ({ visibility, consentChecked }) => visibility === "summary" && consentChecked,
-      ),
-    ).toBe(true)
-    expect(
-      records
-        .filter(({ killedBy }) => !killedBy)
-        .every(({ visibility, consentChecked }) =>
-          visibility === "private" && !consentChecked,
-        ),
-    ).toBe(true)
   })
 
-  it("실명과 원본 파일 경로를 포함하지 않는다", () => {
-    const serialized = JSON.stringify(ideas)
-    const forbiddenNames = [
-      "\uD55C\uC608\uC9C4",
-      "\uC784\uC9C0\uD638",
-      "\uC591\uC9C0\uC6D0",
-    ]
+  it("비공개 상태 없이 확보한 원문만 공개 링크로 제공한다", () => {
+    const records = JSON.parse(JSON.stringify(ideas)) as Array<{
+      id: string
+      artifacts: Array<Record<string, unknown>>
+      [key: string]: unknown
+    }>
+    const artifacts = records.flatMap(({ artifacts }) => artifacts)
 
-    forbiddenNames.forEach((name) => expect(serialized).not.toContain(name))
+    expect(
+      records.every((record) => !("visibility" in record) && !("consentChecked" in record)),
+    ).toBe(true)
+    expect(artifacts.every((artifact) => !("available" in artifact))).toBe(true)
+    expect(artifacts.map(({ note }) => note).join(" ")).not.toContain("비공개")
+
+    const blackHarbor = records.find(({ id }) => id === "black-harbor")
+    const packMatch = records.find(({ id }) => id === "pack-match")
+    expect(blackHarbor?.artifacts[0].url).toContain("documents/black-harbor-rulebook.md")
+    expect(packMatch?.artifacts[0]).not.toHaveProperty("url")
+    expect(packMatch?.artifacts[0].note).toBe("대화 첨부 원문 · 원본 미수집")
+  })
+
+  it("공개 웹에서 사용할 수 없는 내부 파일 경로를 포함하지 않는다", () => {
+    const serialized = JSON.stringify(ideas)
+
     expect(serialized).not.toMatch(/file:\/\/|slack\.com\/files/)
-    expect(ideas.flatMap(({ artifacts }) => artifacts).every(({ available }) => !available)).toBe(
-      true,
-    )
   })
 })
