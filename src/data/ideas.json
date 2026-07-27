@@ -390,7 +390,7 @@
     "causes": [
       "팀 선택"
     ],
-    "verdict": "밤송이클럽의 팀 논의 결과 최종 프로젝트 후보에서 제외되었으며, 구체적인 탈락 사유는 추측하지 않고 추가 확인이 필요합니다.",
+    "verdict": "밤송이 클럽의 팀 논의 결과 최종 프로젝트 후보에서 제외되었으며, 구체적인 탈락 사유는 추측하지 않고 추가 확인이 필요합니다.",
     "lessons": "동시성 안전한 수요 매칭과 결제 정합성을 구현하기 전에 제한된 생활권의 수요 밀도와 픽업 운영 가능성을 먼저 검증해야 합니다.",
     "artifacts": [
       {
@@ -401,6 +401,52 @@
     ],
     "resurrectedAs": null,
     "sourceRound": "최종 프로젝트 후보",
-    "killedBy": "밤송이클럽"
+    "killedBy": "밤송이 클럽"
+  },
+  {
+    "id": "ieum",
+    "title": "이음",
+    "oneLinePitch": "기수가 끝나며 사라지는 부트캠프의 질문·해결 기록을 커리큘럼 맥락과 함께 축적하고 RAG로 검색하는 지식 커뮤니티.",
+    "proposedAt": "2026-07-10",
+    "rejectedAt": null,
+    "causes": [
+      "팀 선택"
+    ],
+    "verdict": "밤송이 클럽의 팀 논의 결과 최종 프로젝트 후보에서 제외되었으며, 구체적인 탈락 사유는 제공된 기획안에 기록되지 않았습니다.",
+    "lessons": "핵심 차별점인 질문 작성 전 RAG 선제안을 먼저 검증하고, 개인정보 리스크와 일정 부담이 큰 곁가지 기능은 후순위로 잘라내야 합니다.",
+    "artifacts": [
+      {
+        "name": "이음 기획안 v2",
+        "type": "md",
+        "note": "대화 제공 원문",
+        "url": "/documents/ieum-plan-v2.md"
+      }
+    ],
+    "resurrectedAs": null,
+    "sourceRound": "최종 프로젝트 후보",
+    "killedBy": "밤송이 클럽"
+  },
+  {
+    "id": "crewon",
+    "title": "크루온 (CrewOn)",
+    "oneLinePitch": "러닝크루·독서모임 운영자의 선착순 신청, 대기열 승급, 출석과 노쇼 관리를 자동화하는 모임 운영 백오피스.",
+    "proposedAt": "2026-07-08",
+    "rejectedAt": null,
+    "causes": [
+      "팀 선택"
+    ],
+    "verdict": "밤송이 클럽의 팀 논의 결과 최종 프로젝트 후보에서 제외되었으며, 구체적인 탈락 사유는 제공된 기획안에 기록되지 않았습니다.",
+    "lessons": "선착순 원자 판정과 자동 승급의 기술적 매력뿐 아니라, 4주 안에 실제 모임 파일럿을 확보하고 운영 문제를 검증할 수 있는지가 핵심입니다.",
+    "artifacts": [
+      {
+        "name": "크루온 팀 공유용 기획안",
+        "type": "pdf",
+        "note": "대화 제공 원문",
+        "url": "/documents/crewon-team-plan.pdf"
+      }
+    ],
+    "resurrectedAs": null,
+    "sourceRound": "최종 프로젝트 후보",
+    "killedBy": "밤송이 클럽"
   }
 ]

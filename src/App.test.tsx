@@ -53,7 +53,7 @@ describe("App", () => {
 
     const list = screen.getByRole("list", { name: "아이디어 목록" })
 
-    expect(within(list).getAllByRole("listitem")).toHaveLength(17)
+    expect(within(list).getAllByRole("listitem")).toHaveLength(19)
     expect(list).toHaveClass("idea-list")
     expect(document.querySelector(".idea-grid")).not.toBeInTheDocument()
   })
@@ -79,17 +79,19 @@ describe("App", () => {
 
     await user.selectOptions(
       screen.getByRole("combobox", { name: "Killed by" }),
-      "밤송이클럽",
+      "밤송이 클럽",
     )
 
     const filteredList = screen.getByRole("list", { name: "아이디어 목록" })
-    expect(within(filteredList).getAllByRole("listitem")).toHaveLength(1)
+    expect(within(filteredList).getAllByRole("listitem")).toHaveLength(3)
     expect(screen.getByText("팩매치")).toBeInTheDocument()
+    expect(screen.getByText("이음")).toBeInTheDocument()
+    expect(screen.getByText("크루온 (CrewOn)")).toBeInTheDocument()
     expect(screen.queryByText("검은 항구")).not.toBeInTheDocument()
 
     await user.click(screen.getByRole("button", { name: "검색과 필터 초기화" }))
     const resetList = screen.getByRole("list", { name: "아이디어 목록" })
-    expect(within(resetList).getAllByRole("listitem")).toHaveLength(17)
+    expect(within(resetList).getAllByRole("listitem")).toHaveLength(19)
   })
 
   it("판정자가 있는 카드에 KILLED BY 표식을 보여준다", () => {
@@ -139,6 +141,6 @@ describe("App", () => {
     expect(screen.getByText("아직 묻힌 기록이 없습니다")).toBeInTheDocument()
     await user.click(screen.getByRole("button", { name: "검색과 필터 초기화" }))
     const list = screen.getByRole("list", { name: "아이디어 목록" })
-    expect(within(list).getAllByRole("listitem")).toHaveLength(17)
+    expect(within(list).getAllByRole("listitem")).toHaveLength(19)
   })
 })
