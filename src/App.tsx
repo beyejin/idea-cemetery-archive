@@ -1,17 +1,24 @@
 import { Archive, Globe, MagnifyingGlass, X } from "@phosphor-icons/react"
-import { useMemo, useState } from "react"
+import { lazy, Suspense, useMemo, useState } from "react"
 
 import { IdeaCard } from "./components/IdeaCard"
 import { IdeaDetailDialog } from "./components/IdeaDetailDialog"
 import { allCauses, allKillers, ideas } from "./data/ideas"
 import { filterIdeas } from "./lib/filterIdeas"
-import type { Cause, Idea } from "./types"
+import type { Artifact, Cause, Idea } from "./types"
+
+const NotionViewerDialog = lazy(() =>
+  import("./components/NotionViewerDialog").then(({ NotionViewerDialog }) => ({
+    default: NotionViewerDialog,
+  })),
+)
 
 export function App() {
   const [query, setQuery] = useState("")
   const [selectedCause, setSelectedCause] = useState<Cause | null>(null)
   const [selectedKiller, setSelectedKiller] = useState<string | null>(null)
   const [selectedIdea, setSelectedIdea] = useState<Idea | null>(null)
+  const [selectedNotion, setSelectedNotion] = useState<Artifact | null>(null)
   const publicArtifactCount = ideas
     .flatMap(({ artifacts }) => artifacts)
     .filter(({ url }) => Boolean(url)).length
@@ -191,7 +198,16 @@ export function App() {
       </footer>
 
       {selectedIdea ? (
-        <IdeaDetailDialog idea={selectedIdea} onClose={() => setSelectedIdea(null)} />
+        <IdeaDetailDialog
+          idea={selectedIdea}
+          onClose={() => setSelectedIdea(null)}
+          onOpenNotion={setSelectedNotion}
+        />
+      ) : null}
+      {selectedNotion ? (
+        <Suspense fallback={null}>
+          <NotionViewerDialog artifact={selectedNotion} onClose={() => setSelectedNotion(null)} />
+        </Suspense>
       ) : null}
     </>
   )

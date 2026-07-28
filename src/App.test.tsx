@@ -1,8 +1,10 @@
 import { render, screen, within } from "@testing-library/react"
 import userEvent from "@testing-library/user-event"
-import { describe, expect, it } from "vitest"
+import { afterEach, describe, expect, it, vi } from "vitest"
 
 import { App } from "./App"
+
+afterEach(() => vi.unstubAllGlobals())
 
 describe("App", () => {
   it("전체 공개 아카이브와 실제 자료 링크를 보여준다", async () => {
@@ -20,6 +22,41 @@ describe("App", () => {
       within(dialog).getByRole("link", { name: /검은 항구 5분 룰북/ }),
     ).toHaveAttribute("href", expect.stringContaining("documents/black-harbor-rulebook.md"))
     expect(within(dialog).queryByText(/공개 동의/)).not.toBeInTheDocument()
+  })
+
+  it("Notion 원문 전체를 사이트 안의 문서 뷰어로 연다", async () => {
+    const user = userEvent.setup()
+    const fetchMock = vi.fn().mockResolvedValue(
+      new Response(
+        "# 아이디어 — Notion 원문 공개본\n\n## 첫 기록\n\n원문의 마지막 문장까지 표시합니다.",
+        { status: 200 },
+      ),
+    )
+    vi.stubGlobal("fetch", fetchMock)
+    render(<App />)
+
+    await user.click(screen.getByRole("button", { name: "Rumor Market 기록 열기" }))
+    const detailDialog = screen.getByRole("dialog", { name: "Rumor Market" })
+    await user.click(
+      within(detailDialog).getByRole("button", { name: "Notion 원문 뷰어로 열기" }),
+    )
+
+    const viewer = await screen.findByRole("dialog", { name: "Notion 원문" })
+    expect(fetchMock).toHaveBeenCalledWith(
+      expect.stringContaining("documents/notion-ideas.md"),
+      expect.objectContaining({ signal: expect.any(AbortSignal) }),
+    )
+    expect(
+      await within(viewer).findByRole("heading", {
+        level: 1,
+        name: "아이디어 — Notion 원문 공개본",
+      }),
+    ).toBeInTheDocument()
+    expect(within(viewer).getByText("원문의 마지막 문장까지 표시합니다.")).toBeInTheDocument()
+
+    await user.click(within(viewer).getByRole("button", { name: "문서 뷰어 닫기" }))
+    expect(screen.queryByRole("dialog", { name: "Notion 원문" })).not.toBeInTheDocument()
+    expect(screen.getByRole("dialog", { name: "Rumor Market" })).toBeInTheDocument()
   })
 
   it("검색어를 입력해도 검색창 이름을 유지한다", async () => {

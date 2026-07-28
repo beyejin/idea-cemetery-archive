@@ -1,11 +1,12 @@
-import { ArrowUpRight, FileText, X } from "@phosphor-icons/react"
+import { ArrowRight, ArrowUpRight, FileText, X } from "@phosphor-icons/react"
 import { useEffect, useRef } from "react"
 
-import type { Idea } from "../types"
+import type { Artifact, Idea } from "../types"
 
 interface IdeaDetailDialogProps {
   idea: Idea
   onClose: () => void
+  onOpenNotion: (artifact: Artifact) => void
 }
 
 function formatDate(value: string | null) {
@@ -18,7 +19,7 @@ function formatDate(value: string | null) {
   }).format(new Date(`${value}T00:00:00`))
 }
 
-export function IdeaDetailDialog({ idea, onClose }: IdeaDetailDialogProps) {
+export function IdeaDetailDialog({ idea, onClose, onOpenNotion }: IdeaDetailDialogProps) {
   const dialogRef = useRef<HTMLDialogElement>(null)
   const closeButtonRef = useRef<HTMLButtonElement>(null)
   const supportsModalDialog =
@@ -100,7 +101,20 @@ export function IdeaDetailDialog({ idea, onClose }: IdeaDetailDialogProps) {
           <ul className="artifact-list">
             {idea.artifacts.map((artifact) => (
               <li key={`${artifact.type}-${artifact.name}`}>
-                {artifact.url ? (
+                {artifact.url && artifact.type === "notion" ? (
+                  <button
+                    type="button"
+                    onClick={() => onOpenNotion(artifact)}
+                    aria-label={`${artifact.name} 뷰어로 열기`}
+                  >
+                    <FileText aria-hidden="true" />
+                    <span>
+                      <strong>{artifact.name}</strong>
+                      <small>{artifact.note ?? "공개 원문"}</small>
+                    </span>
+                    <ArrowRight aria-hidden="true" />
+                  </button>
+                ) : artifact.url ? (
                   <a
                     href={`${import.meta.env.BASE_URL}${artifact.url.replace(/^\//, "")}`}
                     target="_blank"
